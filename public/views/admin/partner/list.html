@@ -1,0 +1,83 @@
+<style type="text/css">
+    .pagination{float:right;}
+</style>
+<script src="assets/js/ui-bootstrap-tpls.js"></script>
+<div class="row">
+  <!--   <div class="col-md-2">
+      <div class="list-group">
+          <a ui-sref="auth.plugins.tables.footable" ng-class="{ active: $state.includes('auth.plugins.tables.footable') }" class="list-group-item">Footable</a>
+          <a ui-sref="auth.plugins.tables.datatable" ng-class="{ active: $state.includes('auth.plugins.tables.datatable') }" class="list-group-item">Datatable</a>
+      </div>
+  </div> -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                <button ng-disabled="disable" class="btn btn-primary" ng-click="modalOpen_add()">Thêm mới</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table style="margin-bottom:0px" class="table table-yuk2 toggle-arrow-tiny" id="footable_demo" data-filter="#textFilter" data-page-size="5">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên đối tác</th>
+                            <th>Link</th>
+                            <th>Alt</th>
+                            <th>Ngày tạo</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="gr in list_data | limitTo:itemsPerPage">
+                            <td>{{$index+1}}</td>
+                            <td><img style="width:60px;height:40px;padding: 1px; border: 1px solid #DDDDDD;" src="uploads/{{gr.images}}"></td>
+                            <td>{{gr.name}}</td>
+                            <td>{{gr.link}}</td>
+                            <td>{{gr.alt}}</td>
+                            <td>{{gr.create_time}}</td> 
+                            <td ng-if="gr.status == 1">
+                                <a ng-click="change_status(gr)"><input type="checkbox" class="js-switch mini-switch" ng-init="extEl_switch_b = true" ng-model="extEl_switch_b" ui-switch ng-click="change()"/>
+                                </a>
+                            </td>
+                            <td ng-if="gr.status == 2">
+                                <a ng-click="change_status(gr)"><input type="checkbox" class="js-switch mini-switch" ng-init="extEl_switch_b = false" ng-model="extEl_switch_b" ui-switch ng-click="change()"/>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                  <button ng-disabled="disable" aria-expanded="false" data-toggle="dropdown" class="btn btn-sm btn-warning dropdown-toggle" type="button">
+                                    Hành động <span class="caret"></span>
+                                  </button>
+                                  <ul role="menu" class="dropdown-menu">
+                                    <li><a href="javascript:void(0)" ng-click="modalOpen_update(gr)">Cập nhật</a></li>
+                                    <li><a href="javascript:void(0)" ng-click="delete($index,gr.id)">Xóa</a></li>
+                                  </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="hide-if-no-paging">
+                        <tr>
+                            <td colspan="5">
+                                <ul class="pagination pagination-sm"></ul>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination" boundary-links="true" rotate="false" num-pages="numPages" ng-click="list()"></pagination>
+
+                <div id="facebookG" ng-if="loading">
+                    <div id="blockG_1" class="facebook_blockG" >
+                    </div>
+                    <div id="blockG_2" class="facebook_blockG">
+                    </div>
+                    <div id="   blockG_3" class="facebook_blockG">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

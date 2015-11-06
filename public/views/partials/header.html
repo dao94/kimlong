@@ -1,0 +1,21 @@
+		<!-- header -->
+		<header id="main_header" class="{{topBarColor}}">
+			<div class="container-fluid">
+				<div class="brand_section">
+					<a ui-sref="auth.login">
+						<!--<img ng-src="images/logo.png" alt="site_logo" width="63" height="26">-->
+					</a>
+				</div>
+                <div class="header_user_actions dropdown" on-toggle="toggled(open)" dropdown>
+                    <div class="dropdown-toggle user_dropdown" dropdown-toggle>
+                        <div class="user_avatar">
+                            <img ng-src="assets/img/avatar.png" alt="" title="Carrol Clark (carrol@example.com)" width="38" height="38">
+                        </div>
+                        <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href='auth/logout'>Log Out</a></li>
+                    </ul>
+                </div>
+			</div>
+		</header>

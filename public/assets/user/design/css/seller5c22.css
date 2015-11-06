@@ -1,0 +1,16 @@
+﻿@media(max-width:1024px) {
+.zopim {
+    right: -130px !important;
+    -webkit-transition: all .5s ease-in-out 0s;
+    -moz-transition: all .5s ease-in-out 0s;
+    -o-transition: all .5s ease-in-out 0s;
+    transition: all .5s ease-in-out 0s;
+}
+.shopregisteraction .zopim{
+display:none;
+}
+  
+}
+[data-target=".import-products"]{
+display:none;
+}

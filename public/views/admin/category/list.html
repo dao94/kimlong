@@ -1,0 +1,30 @@
+<style type="text/css">
+    .pagination{float:right;}
+    .ng-scope{font-size: 14px;}
+</style>
+<script src="assets/js/ui-bootstrap-tpls.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-2">
+                <button title="Thêm mới" ng-disabled="disable" class="btn btn-primary glyphicon glyphicon-plus" ng-click="modalOpen_add(mytree.currentNode)"></button>
+                <button title="Chỉnh sửa" ng-disabled="disable" class="btn btn-primary glyphicon glyphicon-edit" ng-click="modalOpen_update(mytree.currentNode)"></button>
+                <button title="Xóa" ng-disabled="disable" class="btn btn-primary glyphicon glyphicon-remove-circle" ng-click="delete(mytree.currentNode)"></button>
+            </div>
+            <div class="col-md-5">
+                <label for=""><i style="color:red">"Muốn thêm thể loại con , chọn thể loại đó và nhấn thêm mới !"</i></label>
+            </div>
+        </div>
+        <div class="row">
+        	<div
+			  data-angular-treeview="true"
+			  data-tree-id="mytree"
+			  data-tree-model="group_new"
+			  data-node-id="id"
+              data-node-ordinal="ordinal"
+			  data-node-label="name"
+			  data-node-children="children" >
+			</div>
+        </div>
+    </div>
+</div>
